@@ -9,12 +9,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <h3 style="color:gold"><b><u>{{user.username}}</u></b></h3>
+      <h3><b><u>{{user.username}}</u></b></h3>
 
       {% if user.profile_pic_path %}
         <img class="card" src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail" width="250px" height="250px">        
       {% else %}  
-        <p style="color:azure">No profile picture</p>
+        <p >No profile picture</p>
       {% endif %}  
 
       {% if user == current_user %}
@@ -25,11 +25,11 @@
         </form>  
       {% endif %}  
 
-      <h4 style="color:gold">Bio</h4>
+      <h4 >Bio</h4>
       {% if user.bio %}
         <p>{{user.bio }}</p>
       {% else %}  
-        <p style="color:azure">{{user.username}} has no Bio</p>
+        <p >{{user.username}} has no Bio</p>
       {% endif %}  
 
       {% if user ==current_user %}
@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-md-6">
-      <h4 style="color:gold"><b><u>Pitches</u></b></h4>
+      <h4 ><b><u>Pitches</u></b></h4>
       {% if personal_pitches %}
       
         {% for pitch in personal_pitches %}

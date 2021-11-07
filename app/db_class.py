@@ -1,11 +1,10 @@
-#pylint: skip-file
 from . import db
 from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash
 from . import login_manager
 
-# /////////////////////////////////////////////////////////////////////////
+
 @login_manager.user_loader
 def load_user(user_id):
   '''
@@ -13,7 +12,7 @@ def load_user(user_id):
   '''
   return User.query.get(int(user_id))
 
-# /////////////////////////////////////////////////////////////////////////
+
 class User(UserMixin,db.Model):
   '''
   class with a table defining all the properties for a user
@@ -58,7 +57,7 @@ class User(UserMixin,db.Model):
     function that basically helps in debugging
     '''
     return f'User {self.username}'
-# /////////////////////////////////////////////////////////////////////////
+
 class Role(db.Model):
   '''
   class that defines role for each user
@@ -69,7 +68,6 @@ class Role(db.Model):
 
   users_A=db.relationship('User',backref='role',lazy="dynamic")
 
-# /////////////////////////////////////////////////////////////////////////
 class Pitch(db.Model):
   '''
   class that defines all the properties a pitch should have
@@ -119,7 +117,7 @@ class Pitch(db.Model):
     '''
     return f'Pitch {self.username}'
 
-# /////////////////////////////////////////////////////////////////////////
+
 class Comment(db.Model):
   '''
   class that defines all properties for a comment
@@ -154,4 +152,3 @@ class Comment(db.Model):
     function that basically helps in debugging
     '''
     return f'Comment {self.username}'
-# /////////////////////////////////////////////////////////////////////////
