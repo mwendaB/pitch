@@ -40,9 +40,6 @@ class User(UserMixin,db.Model):
 
 
   def __repr__(self):
-    '''
-    function that basically helps in debugging
-    '''
     return f'User {self.username}'
 
 class Role(db.Model):
