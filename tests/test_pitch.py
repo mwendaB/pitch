@@ -3,9 +3,6 @@ from app.db_class import User,Pitch
 from app import db
 
 class PitchTest(unittest.TestCase):
-  '''
-  class that tests all functions that relate to pitch
-  '''
   def setUp(self):
     '''
     testcase that creates an object pitch
