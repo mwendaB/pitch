@@ -1,3 +1,4 @@
+from logging import DEBUG
 import os
 
 class Config:
@@ -20,28 +21,22 @@ class Config:
 
 
 class ProdConfig(Config):
-  '''
-  Production configurations child class
-  '''
   SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL")
-
+  
+  pass
 
 class DevConfig(Config):
   '''
   Development configuration child class
   '''
 
-
   DEBUG=True 
   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringaschool:mwendaB@localhost/pitcher'
 
 
 class TestConfig(Config):
-  '''
-  test class for running tests
-  '''
   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringaschool:mwendaB@localhost/pitcher'
-
+  DEBUG = True
 config_options={
   'development':DevConfig,
   'production':ProdConfig,
