@@ -7,7 +7,7 @@ class Config:
   '''
   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringaschool:mwendaB@localhost/pitcher'
   
-  SECRET_KEY= 'mwendaB'
+  SECRET_KEY= os.environ.get("")
   UPLOADED_PHOTOS_DEST='app/static/photos'
 
   SIMPLEMDE_JS_IIFE = True
