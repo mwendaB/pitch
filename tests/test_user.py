@@ -9,7 +9,7 @@ class UserTest(unittest.TestCase):
     '''
     creates an object for testing
     '''
-    self.new_user=User(pass_word='pyra')
+    self.new_user=User(pass_word='mwesh')
 
   def test_setting_password(self):
     '''
@@ -31,6 +31,6 @@ class UserTest(unittest.TestCase):
     '''
     testcase to check verifying of hashed password
     '''
-    self.assertTrue(self.new_user.verify_password,('pyra'))    
+    self.assertTrue(self.new_user.verify_password,('mwesh'))    
 
 
