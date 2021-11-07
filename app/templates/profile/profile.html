@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/profile.css')}}">
+{% endblock styles %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 style="color:gold"><b><u>{{user.username}}</u></b></h3>
+
+      {% if user.profile_pic_path %}
+        <img class="card" src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail" width="250px" height="250px">        
+      {% else %}  
+        <p style="color:azure">No profile picture</p>
+      {% endif %}  
+
+      {% if user == current_user %}
+        <form action="{{url_for('lead.update_pic',name=user.username)}}" method="post" enctype="multipart/form-data">
+          <input type="file" name="photo" class="form-control" required >
+
+          <input class="btn btn-success" type="submit">
+        </form>  
+      {% endif %}  
+
+      <h4 style="color:gold">Bio</h4>
+      {% if user.bio %}
+        <p>{{user.bio }}</p>
+      {% else %}  
+        <p style="color:azure">{{user.username}} has no Bio</p>
+      {% endif %}  
+
+      {% if user ==current_user %}
+        <a class="btn btn-success" href="{{url_for('lead.update_profile',name=user.username)}}">Edit Profile</a>        
+      {% endif %}  
+    </div>
+
+    <div class="col-md-6">
+      <h4 style="color:gold"><b><u>Pitches</u></b></h4>
+      {% if personal_pitches %}
+      
+        {% for pitch in personal_pitches %}
+        <div class="card">
+          <h5><b>Title: {{pitch.p_title}}</b></h5>
+          <p><i>{{pitch.pitch_it|safe}}<i></p>
+          <p>Category :{{pitch.category}}</p>
+          <p>Posted on : {{pitch.post}}</p>
+          <p>By :{{pitch.posted_by}}
+        </div>
+        <br>
+        {% endfor %}
+      {% else %}  
+        <h4 class="btn-danger">You have no picthes</h4>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

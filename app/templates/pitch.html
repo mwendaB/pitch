@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/pitch.css')}}">
+{% endblock styles %}
+
+{% block content %}
+<h1 style="color:azure" class="text-center"><u>{{title}}</u></h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        {% if pitches %}
+
+          {% for pitch in pitches %}
+          <div class="container">
+            <div class="row">              
+              <div class="card">
+                <p><b>Title: {{pitch.p_title}}</b></p>
+                <p>{{pitch.pitch_it|safe}}</p>
+                <p>Posted on: {{pitch.post}}</p>
+                <p>By :{{pitch.posted_by}}
+
+                
+                {% if current_user.is_authenticated %}    
+                <div class="text-center">
+                  <button class="btn btn-outline-warning">Like</button>                    
+                  <button class="btn btn-outline-warning">Dislike</button>    
+                </div>
+                
+                <a class="btn btn-info" style="color:black" href="/pitch/comment/{{pitch.id}}">Comments</a>                      
+                {% else %}
+                <div class="btn btn-info">
+                  <a class="btn btn-outline-danger" href="{{url_for('verify.signin')}}">Sign in to comment</a>
+                </div>
+                {% endif %}
+              </div>                
+            </div>  
+          </div>  
+          <br>
+          {% endfor %}  
+        {% else %}
+          <h4 class="btn-danger">No pitches posted</h4>
+        {% endif %}
+      </div>
+      
+      <div class="col-md-4">
+        {% if current_user.is_authenticated %}           
+          <a class="btn btn-success" href="/pitch/new/{{title}}">Post pitch</a>            
+        {% else %}      
+          <a class="btn btn-success" href="{{url_for('verify.signin')}}">Sign in to post</a>        
+        {% endif %}
+      </div>    
+{% endblock content %}

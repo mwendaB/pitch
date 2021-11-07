@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock styles %}
+
+{% block content %}
+<h1>PITCHES_WEB_APP</h1>
+<hr>
+<h2 style="margin-top:20%"class="text-center">Welcome to Pitch_Web_App</h2>
+
+<div class="dropbtn">
+  <button class="nav-link btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View Pitches</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="nav-link btn btn-outline-success" href="/pitch/Job Seeking pitch">Job Seeking pitch</a>
+    <a class="nav-link btn btn-outline-success" href="/pitch/About me">About me</a>
+    <a class="nav-link btn btn-outline-success" href="/pitch/Advert pitch">Advert pitch</a>
+    <a class="nav-link btn btn-outline-success" href="/pitch/Media pitch">Media pitch</a>
+    <a class="nav-link btn btn-outline-success" href="/pitch/Pick up lines">Pick up lines</a>
+  </div>
+</div>
+{% endblock content %}
