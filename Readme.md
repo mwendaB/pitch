@@ -42,7 +42,7 @@ As a user I would like to:
 * Creating the virtual environment
 
         $ python3 -m venv --without-pip virtual
-        $ source virtual/bin/virtual
+        $ source source virtual/bin/activate
         $ curl https://bootstrap.pypa.io/get-pip.py | python
 
 * Installing Flask and other Modules
