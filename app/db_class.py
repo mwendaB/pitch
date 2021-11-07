@@ -7,16 +7,10 @@ from . import login_manager
 
 @login_manager.user_loader
 def load_user(user_id):
-  '''
-  function that queries the database and gets a User with that id
-  '''
   return User.query.get(int(user_id))
 
 
 class User(UserMixin,db.Model):
-  '''
-  class with a table defining all the properties for a user
-  '''
   __tablename__='usertable'
 
   id=db.Column(db.Integer, primary_key=True)
@@ -32,22 +26,15 @@ class User(UserMixin,db.Model):
   
   @property
   def password(self):
-    '''
-    function that raises an attribute error when one tries accesing a password    
-    '''
     raise AttributeError('You cannot read the password')
 
   @password.setter
   def password(self,password):
-    '''
-    function that generates a hashed password and saves it in the database
-    '''
+
     self.pass_hash=generate_password_hash(password)  
 
   def verify_password(self,password):
-    '''
-    function that compares a hashed password and a un hashed password to see if they are same
-    '''
+   
     return check_password_hash(self.pass_hash,password)
 
 
