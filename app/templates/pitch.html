@@ -6,7 +6,7 @@
 {% endblock styles %}
 
 {% block content %}
-<h1 style="color:azure" class="text-center"><u>{{title}}</u></h1>
+<h1 class="text-center"><u>{{title}}</u></h1>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
@@ -28,7 +28,7 @@
                   <button class="btn btn-outline-warning">Dislike</button>    
                 </div>
                 
-                <a class="btn btn-info" style="color:black" href="/pitch/comment/{{pitch.id}}">Comments</a>                      
+                <a class="btn btn-info" href="/pitch/comment/{{pitch.id}}">Comments</a>                      
                 {% else %}
                 <div class="btn btn-info">
                   <a class="btn btn-outline-danger" href="{{url_for('verify.signin')}}">Sign in to comment</a>
@@ -40,7 +40,7 @@
           <br>
           {% endfor %}  
         {% else %}
-          <h4 class="btn-danger">No pitches posted</h4>
+          <h4>No pitches posted</h4>
         {% endif %}
       </div>
       
