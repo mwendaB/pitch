@@ -6,7 +6,7 @@
 {% endblock styles %}
 
 {% block content %}
-<h1 class="text-center"><u>{{title}}</u></h1>
+<h1 style="color:azure" class="text-center"><u>{{title}}</u></h1>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
@@ -15,9 +15,9 @@
           {% for pitch in pitches %}
           <div class="container">
             <div class="row">              
-              <div class="card">
-                <p><b>Title: {{pitch.p_title}}</b></p>
-                <p>{{pitch.pitch_it|safe}}</p>
+              <div class="card" style="width: 18rem;">
+                <p class="card-title"><b>Title: {{pitch.p_title}}</b></p>
+                <p class="card-text">{{pitch.pitch_it|safe}}</p>
                 <p>Posted on: {{pitch.post}}</p>
                 <p>By :{{pitch.posted_by}}
 
@@ -28,9 +28,9 @@
                   <button class="btn btn-outline-warning">Dislike</button>    
                 </div>
                 
-                <a class="btn btn-info" href="/pitch/comment/{{pitch.id}}">Comments</a>                      
+                <a class="btn btn-info" style="color:black" href="/pitch/comment/{{pitch.id}}">Comments</a>                      
                 {% else %}
-                <div class="btn btn-info">
+                <div >
                   <a class="btn btn-outline-danger" href="{{url_for('verify.signin')}}">Sign in to comment</a>
                 </div>
                 {% endif %}
@@ -40,7 +40,7 @@
           <br>
           {% endfor %}  
         {% else %}
-          <h4>No pitches posted</h4>
+          <h4 class="toast-body">No pitches posted</h4>
         {% endif %}
       </div>
       
