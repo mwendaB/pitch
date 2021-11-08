@@ -1,9 +1,9 @@
-# Pitch It Up!
+# Pitch App
 
 ## Built By [Brian Mwenda](https://github.com/mwendaB)
 
 ## Description
-an application that allows users to use that one minute wisely. The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
+An application that allows users to use that one minute wisely. The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
 
 
 ## User Stories
@@ -28,36 +28,56 @@ As a user I would like to:
 
 ## SetUp / Installation Requirements
 ### Prerequisites
-* python3.6
+* python3
 * pip
-* virtualenv
+* sqlservers
+* Bootstrap
 
 ### Cloning
 * In your terminal:
+        ```
+        git clone https://github.com/mwendaB/pitch
+        ```
 
-        $ git clone https://github.com/mwendaB/pitch
-        $ cd pitch
+        ```
+        cd pitch
+        ```
 
 ## Running the Application
 * Creating the virtual environment
+        ```
+        python3 -m venv --without-pip virtual
+        ```
 
-        $ python3 -m venv --without-pip virtual
-        $ source source virtual/bin/activate
-        $ curl https://bootstrap.pypa.io/get-pip.py | python
+        ```
+        source source virtual/bin/activate
+         ```
+
+        ```
+        curl https://bootstrap.pypa.io/get-pip.py | python
+        ```
 
 * Installing Flask and other Modules
-
-        $ pip install -r requirements.txt
+       ```
+         pip install -r requirements.txt
+         ```
 
 * To run the application, in your terminal:
 
-        $ chmod +x start.sh
-        $ ./start.sh
+        ```
+         chmod +x start.sh
+         ```
+
+         ```
+        ./start.sh
+        ```
 
 ## Testing the Application
 * To run the tests for the class files:
-
-        $ python3 manage.py test
+         
+         ```
+         python3 manage.py test
+         ```
 
 ## Technologies Used
 * Python3
