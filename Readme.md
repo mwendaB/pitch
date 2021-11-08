@@ -35,49 +35,53 @@ As a user I would like to:
 
 ### Cloning
 * In your terminal:
-        ```
-        git clone https://github.com/mwendaB/pitch
-        ```
 
-        ```
-        cd pitch
-        ```
+```
+git clone https://github.com/mwendaB/pitch
+```
+
+
+
+```
+cd pitch
+```
 
 ## Running the Application
 * Creating the virtual environment
-        ```
-        python3 -m venv --without-pip virtual
-        ```
 
-        ```
-        source source virtual/bin/activate
-         ```
+```
+python3 -m venv --without-pip virtual
+```
 
-        ```
-        curl https://bootstrap.pypa.io/get-pip.py | python
-        ```
+```
+source source virtual/bin/activate
+```
+
+```
+curl https://bootstrap.pypa.io/get-pip.py | python
+```
 
 * Installing Flask and other Modules
-       ```
-         pip install -r requirements.txt
-         ```
+```
+pip install -r requirements.txt
+```
 
 * To run the application, in your terminal:
 
-        ```
-         chmod +x start.sh
-         ```
+```
+chmod +x start.sh
+```
 
-         ```
-        ./start.sh
-        ```
+```
+./start.sh
+```
 
 ## Testing the Application
 * To run the tests for the class files:
          
-         ```
-         python3 manage.py test
-         ```
+```
+python3 manage.py test
+```
 
 ## Technologies Used
 * Python3
