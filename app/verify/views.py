@@ -44,9 +44,9 @@ def signup():
 
     mail_message("Welcome to Pitch app","email/welcome_user",user.email,user=user)
 
-    return redirect(url_for('verify.signin'))
+    return redirect(url_for('verify.signup'))
     
-  return render_template('verify/signup.html',SignUpForm=form)
+  return render_template('verify/signin.html',SignInForm=form)
 
 @verify.route('/signout')
 @login_required

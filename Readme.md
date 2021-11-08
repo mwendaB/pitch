@@ -88,6 +88,7 @@ python3 manage.py test
 * Flask
 * Bootstrap
 * Figma
+
 ## [sketche](https://www.figma.com/file/PmU0tyOTW6RVrqRcI8gSfQ/pitch-app?node-id=2%3A9)
 
 ## License
