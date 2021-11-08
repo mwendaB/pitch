@@ -27,7 +27,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">  
       {% if current_user.is_authenticated %}   
-        <li >{{current_user.username}}</li>
+        <li style="color: white;">{{current_user.username}}</li>
 
         <li class="nav-item">
           <a class="btn btn-outline-danger" href="{{url_for('lead.profile',name=current_user.username)}}">Profile</a>
