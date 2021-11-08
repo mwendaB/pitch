@@ -1,4 +1,3 @@
-from logging import DEBUG
 import os
 
 class Config:
@@ -7,7 +6,7 @@ class Config:
   '''
   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringaschool:mwendaB@localhost/pitcher'
   
-  SECRET_KEY= os.environ.get("")
+  SECRET_KEY= 'mwendaB'
   UPLOADED_PHOTOS_DEST='app/static/photos'
 
   SIMPLEMDE_JS_IIFE = True
@@ -21,7 +20,7 @@ class Config:
 
 
 class ProdConfig(Config):
-  SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL")
+  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringaschool:mwendaB@localhost/pitcher'
   
 
 
@@ -37,6 +36,7 @@ class DevConfig(Config):
 class TestConfig(Config):
   SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringaschool:mwendaB@localhost/pitcher'
   DEBUG = True
+  
 config_options={
   'development':DevConfig,
   'production':ProdConfig,
