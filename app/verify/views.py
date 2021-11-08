@@ -42,7 +42,7 @@ def signup():
     db.session.add(user)
     db.session.commit()
 
-    mail_message("Welcome to Pitch_web_app","email/welcome_user",user.email,user=user)
+    mail_message("Welcome to Pitch app","email/welcome_user",user.email,user=user)
 
     return redirect(url_for('verify.signin'))
     
