@@ -25,6 +25,12 @@ As a user I would like to:
 | Display pitches | **On page load** | Each pitch displays author, title, pitch, date comment tab |
 | To add a pitch  | **Click an add pitch** | Redirected to the pitch collection form|
 
+## Known Bugs
+After creating an account for the first time the user is not redirected to
+the login page since the welcoming email is not sent to the user.
+This is due to the gmail security which doesnt allow none recognized 
+auto sending emails.
+
 
 ## SetUp / Installation Requirements
 ### Prerequisites
